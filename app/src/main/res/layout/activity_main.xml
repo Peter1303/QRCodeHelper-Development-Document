@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<Button
+		android:layout_height="wrap_content"
+		android:text="调用 二维码 并扫描"
+		android:layout_width="match_parent"
+		android:id="@+id/main_Button"/>
+
+	<TextView
+		android:layout_height="match_parent"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="match_parent"
+		android:gravity="top|left"
+		android:id="@+id/main_TextView"
+		android:padding="16dp"/>
+
+</LinearLayout>
+
