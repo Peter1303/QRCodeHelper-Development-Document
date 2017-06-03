@@ -2,6 +2,7 @@ package com.QRCodeHelper.Develper.Document.utils;
 
 import android.app.Activity;
 import android.content.Intent;
+import java.io.File;
 
 public class QRCodeHelperUtils
 {
@@ -21,7 +22,6 @@ public class QRCodeHelperUtils
 	//从外部调用 二维码 扫描
 	public static String startQRCodeScan(Activity a) throws Exception{
 		Intent i = new Intent();
-		//i.setAction("com.QRCode.helper.SCAN");
 		i.setClassName("com.QRCode.helper","com.QRCode.helper.qrcode.CaptureActivity");
 		i.putExtra("API",true);
 		try {
@@ -31,8 +31,19 @@ public class QRCodeHelperUtils
 		}
 		return null;
 	}
-	
-	
+	//从外部调用 二维码 扫描图片中的二维码 
+	public static String startQRCodeScan(Activity a,File f) throws Exception{
+		Intent i = new Intent();
+		i.setClassName("com.QRCode.helper","com.QRCode.helper.qrcode.CaptureActivity");
+		i.putExtra("API",true);
+		i.putExtra("FILE",f.toString());
+		try {
+			a.startActivityForResult(i,RESULT_CODE_QRCODE);
+		} catch (Exception e){
+			return e.toString();
+		}
+		return null;
+	}
 	
 	
 	
